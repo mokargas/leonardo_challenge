@@ -9,10 +9,6 @@ import { ReactNode } from "react";
 
 export function AuthLayout({ children }: { children: ReactNode }) {
   const { isAuthenticated, handleLogin, handleLogout, userData } = useAuth();
-  const handleImmediateLogin = (username: string, jobTitle: string) => {
-    handleLogin(username, jobTitle);
-
-  }
   return (
     <>
       <Header isAuthenticated={isAuthenticated} />
@@ -23,7 +19,7 @@ export function AuthLayout({ children }: { children: ReactNode }) {
               <CardBody>
                 <Heading size="lg" mb={8}>Access Required</Heading>
                 <Text as="p" mb={8}>Please create a profile to access this page</Text>
-                <AuthForm isAuthenticated={isAuthenticated} handleLogin={handleImmediateLogin} handleLogout={handleLogout} userData={userData} />
+                <AuthForm isAuthenticated={isAuthenticated} handleLogin={handleLogin} handleLogout={handleLogout} userData={userData} />
               </CardBody>
             </Card>
           </> : (

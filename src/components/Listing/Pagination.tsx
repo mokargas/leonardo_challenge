@@ -25,17 +25,16 @@ export function Pagination({ data, handlePageChange, ...props }: PaginationProps
           onClick={() => handlePageChange(data.Page.pageInfo.currentPage - 1)}
           mr={4}
           aria-label="Previous Page"
-          size={{base:"sm", lg:"md"}}
+          size={{ base: "sm", lg: "md" }}
         >
           Prev
         </Button>
         <Box aria-live="polite" >
-          <Text as="span" size={{base:"xs", lg:"md"}}>Page {data.Page.pageInfo.currentPage} of {data.Page.pageInfo.lastPage}</Text>
+          <Text as="span" size={{ base: "xs", lg: "md" }}>Page {data.Page.pageInfo.currentPage} of {data.Page.pageInfo.lastPage}</Text>
         </Box>
         <Button
           variant="action"
-          size={{base:"sm", lg:"md"}}
-
+          size={{ base: "sm", lg: "md" }}
           isDisabled={data.Page.pageInfo.currentPage === data.Page.pageInfo.lastPage}
           onClick={() => handlePageChange(data.Page.pageInfo.currentPage + 1)}
           ml={4}

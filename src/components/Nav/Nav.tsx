@@ -9,11 +9,23 @@ type NavItem = {
   label: string;
 };
 
+const items: NavItem[] = [
+  { href: '/', label: 'Home' },
+  { href: '/information', label: 'Information' },
+  { href: '/profile', label: 'Profile' },
+];
+
 type NavLinkProps = ChakraLinkProps & NextLinkProps & {
   children: ReactNode;
 };
 
-function NavLink ({ href, children, ...props }: NavLinkProps) {
+/**
+ * Renders a navigation link component.
+ *
+ * @param {NavLinkProps} props - The props for the NavLink component.
+ * @returns {JSX.Element} The rendered NavLink component.
+ */
+function NavLink ({ href, children, ...props }: NavLinkProps): JSX.Element {
   const path = usePathname();
 
   const hrefPath = typeof href === 'string' ? href : href.pathname;
@@ -34,12 +46,6 @@ function NavLink ({ href, children, ...props }: NavLinkProps) {
       </Link>
   );
 };
-
-const items: NavItem[] = [
-  { href: '/', label: 'Home' },
-  { href: '/information', label: 'Information' },
-  { href: '/profile', label: 'Profile' },
-];
 
 export function Nav() {
   return (

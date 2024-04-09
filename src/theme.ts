@@ -1,5 +1,6 @@
 import { extendTheme, keyframes, type ThemeConfig } from '@chakra-ui/react'
 import { mode, StyleFunctionProps } from '@chakra-ui/theme-tools'
+
 const gra = keyframes`
   0% {
     background-position: 0% 50%;

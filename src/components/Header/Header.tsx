@@ -2,7 +2,14 @@ import { Nav } from "@/components/Nav/Nav";
 import { Link } from '@chakra-ui/next-js';
 import { Box, Container, Flex, Heading, Image } from "@chakra-ui/react";
 
-export default function Header({isAuthenticated}: {isAuthenticated: boolean}) {
+/**
+ * Renders the header component. Conditionally renders navigation based on authentication status.
+ *
+ * @param {Object} props - The component props.
+ * @param {boolean} props.isAuthenticated - Indicates whether the user is authenticated.
+ * @returns {JSX.Element} The rendered header component.
+ */
+export default function Header({isAuthenticated}: {isAuthenticated: boolean}): JSX.Element {
   return (
     <Box as="header" mb={8} bgGradient='linear(to-l, #7928CA, #FF0080)'>
       <Container maxWidth="6xl" p={{base: 4, lg:8}} >

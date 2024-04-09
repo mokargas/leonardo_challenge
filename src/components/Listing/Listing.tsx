@@ -11,7 +11,7 @@ const cardVariants: Variants = {
     opacity: 1,
     y: 0,
     transition: {
-      delay: i * 0.1,  // Stagger the children by 0.1 seconds
+      delay: i * 0.1,
     },
   }),
 };
@@ -35,7 +35,6 @@ export function Listing({ data, onSelectedAnime }: ListingProps) {
   return (
     <>
       <AnimatePresence>
-
         <SimpleGrid columns={{ sm: 1, md: 2, lg: 3 }} spacing={4} aria-label="Anime Information Cards">
           {data.Page.media.map((anime,index) => (
             <Button key={anime.id} onClick={() => handleOpenModal(anime)} variant="unstyled" height="auto" title={`Learn more about ${anime.title.romaji}`}>

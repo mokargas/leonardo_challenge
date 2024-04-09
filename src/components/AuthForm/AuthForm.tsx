@@ -1,3 +1,5 @@
+'use client'
+
 import { Button, FormControl, FormErrorMessage, FormHelperText, FormLabel, HStack, Heading, Input, Text, ToastProps } from '@chakra-ui/react';
 import { ReactNode, useEffect, useState } from 'react';
 
@@ -125,7 +127,7 @@ const AuthForm = ({ isAuthenticated, handleLogin, handleLogout, userData, childr
   return (
     <>
       <form onSubmit={handleSubmit} aria-describedby="form-description">
-        <Heading size={{sm: 'lg', lg:'xl'}} mb={6} fontWeight="regular">
+        <Heading size={{ sm: 'lg', lg: 'xl' }} mb={6} fontWeight="regular">
           <Text as="span">{isAuthenticated ? "Update Your" : "Create Your"}</Text>
           <Text as="span" bgClip="text" bgGradient="linear(to-l, #fa5560, #b14bf4, #4d91ff)"> Profile</Text>
         </Heading>
