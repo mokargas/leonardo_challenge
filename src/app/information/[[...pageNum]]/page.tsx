@@ -2,10 +2,11 @@
 import { GET_ANIME } from '@/lib/queries';
 import { AnimeMedia, ModalContent, QueryData, queryDataSchema } from '@/lib/schema';
 import { useSuspenseQuery } from "@apollo/experimental-nextjs-app-support/ssr";
-import { Flex, Spinner, Stack, Text, useDisclosure } from '@chakra-ui/react';
+import { Flex, Stack, Text, useDisclosure } from '@chakra-ui/react';
 import { useRouter } from 'next/navigation';
 import { Suspense, useState } from 'react';
 
+import Loading from '@/app/information/loading';
 import { DetailsModal } from '@/components/DetailsModal/DetailsModal';
 import { Listing } from '@/components/Listing/Listing';
 import { Pagination } from '@/components/Listing/Pagination';
@@ -40,7 +41,7 @@ export default function InformationPage({ params: { pageNum } }: { params: { pag
 
   return (
     <>
-      <Suspense fallback={<Spinner size="xl" aria-label="Loading..." />}>
+      <Suspense fallback={<Loading />}>
         {parsedData.success ? (
           <Flex direction="column">
             <Pagination aria-label="Top Pagination" handlePageChange={handlePageChange} data={parsedData.data} p={{base: 2, lg:4}} mt={-4} mb={4} position="sticky" top="0" backdropFilter='auto' backdropBlur='8px' zIndex={100}  />
