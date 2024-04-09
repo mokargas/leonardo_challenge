@@ -41,25 +41,27 @@ export const DetailsModal: FC<DetailsModalProps> = ({ isOpen, onClose, title, im
     return <></>;
   }
   return (
-    <Modal isOpen={isOpen} onClose={onClose} motionPreset="slideInBottom">
+    <Modal isOpen={isOpen} onClose={onClose} motionPreset="slideInBottom" isCentered>
       <ModalOverlay backdropFilter="blur(12px)" />
-      <ModalContent minW={{ sm: "100%", md: '640px', lg: '800px' }} minH={{ sm: '100dvh', md: '500px' }} p={8} bgColor="gray.900">
-        <ModalHeader pt={0} fontSize="2rem" bgClip="text" bgGradient="linear(to-l, #fa5560, #b14bf4, #4d91ff)" as="h2" >{title}</ModalHeader>
+      <ModalContent minW={{ base: "100%", md: '640px', lg: '800px' }} minH={{ sm: '100dvh', md: '500px' }} p={{base: 4, lg:8}} bgColor="gray.900">
+        <ModalHeader p={4} fontSize={{lg:"2rem"}} bgClip="text" bgGradient="linear(to-l, #fa5560, #b14bf4, #4d91ff)" as="h2" >{title}</ModalHeader>
         <ModalCloseButton backgroundColor="rgba(0, 0, 0, 0.36)" mt={3} />
-        <ModalBody >
-          <Stack direction={{ sm: 'column', md: 'row' }} spacing={8} alignItems="start">
+        <ModalBody p={4}>
+          <Stack direction={{ base: 'column', md: 'row' }} spacing={{base:2, lg: 8}} alignItems="start">
             <Image
               borderRadius="md"
               src={imageURL || 'https://placehold.co/320'}
               alt={title || 'An image of the anime title'}
               loading="lazy"
               objectFit="contain"
-              width="100%"
+              width="full"
               height="320px"
+              p={0}
+              mb={{base: 4, md: 0}}
             />
             <Box>
-              <Heading as="h3" size="md" fontWeight="semibold" mb={4}>About this title</Heading>
-              <Text fontWeight="light" lineHeight={'1.6rem'} mt={4}>{content}</Text>
+              <Heading as="h3" size={{base:'sm', lg:'md'}} fontWeight="semibold" mb={4}>About this title</Heading>
+              <Text fontWeight="light" lineHeight={'1.6rem'} >{content}</Text>
             </Box>
           </Stack>
         </ModalBody>

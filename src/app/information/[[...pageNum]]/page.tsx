@@ -43,7 +43,7 @@ export default function InformationPage({ params: { pageNum } }: { params: { pag
       <Suspense fallback={<Spinner size="xl" aria-label="Loading..." />}>
         {parsedData.success ? (
           <Flex direction="column">
-            <Pagination aria-label="Top Pagination" handlePageChange={handlePageChange} data={parsedData.data} p={4} mt={-4} mb={4} position="sticky" top="0" backdropFilter='auto' backdropBlur='8px' zIndex={100}  />
+            <Pagination aria-label="Top Pagination" handlePageChange={handlePageChange} data={parsedData.data} p={{base: 2, lg:4}} mt={-4} mb={4} position="sticky" top="0" backdropFilter='auto' backdropBlur='8px' zIndex={100}  />
             <Listing data={parsedData.data} onSelectedAnime={handleListingSelection} />
             <Pagination aria-label="Bottom Pagination" handlePageChange={handlePageChange} data={parsedData.data}  mt={8} />
           </Flex>

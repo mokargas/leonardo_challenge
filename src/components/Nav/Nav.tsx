@@ -43,7 +43,7 @@ const items: NavItem[] = [
 
 export function Nav() {
   return (
-    <Stack as="nav" direction="row" spacing={4} align="center" mt={{sm: 4, md: 0}}>
+    <Stack as="nav" direction="row" spacing={4} align="center" mt={{sm: 0, md: 0, lg:4}}>
       {items.map((item) => (
         <NavLink key={item.href} href={item.href}>
           {item.label}

@@ -24,14 +24,10 @@ const Home: NextPage = () => {
           <CardHeader>
             <Heading size="lg" fontWeight="regular">Welcome {userData?.username}!</Heading>
           </CardHeader>
-
           <CardBody>
-
             <Text as="p" mb={8} aria-live="polite">
               The following actions are available to you:
             </Text>
-
-
             <Container maxWidth="sm">
               <VStack>
                 <Button variant="action" width="full" title="View Information on Animes" onClick={() => handleRoute('/information')}>View Information</Button>
